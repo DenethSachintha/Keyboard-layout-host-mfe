@@ -32,27 +32,13 @@ export interface ThemeState {
 }
 
 @Component({
-  selector: 'theme-switcher',
+  selector: 'app-theme-switch',
   standalone: true,
   imports: [CommonModule, FormsModule],
-  template: `
-<div class="card flex justify-end p-2 mb-4">
-  <ul class="flex list-none m-0 p-0 gap-2 items-center">
-    <!-- Dark/Light Toggle Button -->
-    <li>
-      <button
-        type="button"
-        class="inline-flex w-8 h-8 p-0 items-center justify-center surface-0 dark:surface-800 border border-surface-200 dark:border-surface-600 rounded"
-        (click)="onThemeToggler()"
-      >
-        <i [ngClass]="'pi ' + iconClass()" class="dark:text-white"></i>
-      </button>
-    </li>
-  </ul>
-</div>
-`,
+  templateUrl: './theme-switch.html',
+  styleUrl: './theme-switch.scss'
 })
-export class ThemeSwitcher {
+export class ThemeSwitch {
   private readonly STORAGE_KEY = 'themeSwitcherState';
   document = inject(DOCUMENT);
   platformId = inject(PLATFORM_ID);

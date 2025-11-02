@@ -1,4 +1,11 @@
-      <!-- add header footer here -->
+<div class="layout-container">
+  <app-header></app-header>
+
+  <div class="content-area">
+    <app-side-menu [class.open]="sidebarVisible"></app-side-menu>
+
+    <div class="page-content" [class.sidebar-open]="sidebarVisible">
       <router-outlet></router-outlet>
-<app-side-menu></app-side-menu>
-<theme-switcher></theme-switcher>
+    </div>
+  </div>
+</div>

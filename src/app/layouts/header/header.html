@@ -1,0 +1,23 @@
+<div class="header-card flex justify-between items-center p-2">
+  <ul class="flex list-none m-0 p-0 gap-10 items-center">
+    <!-- Logo + Text -->
+    <li class="flex items-center gap-2">
+      <svg width="31" height="33" viewBox="0 0 31 33" fill="none" xmlns="http://www.w3.org/2000/svg"
+        class="block mx-auto">
+        <!-- kept existing logo paths -->
+        <path d="M15.1934 0L0.0391 5.3829L2.3505 25.3417L15.1934 32.427L28.0364 25.3417L30.3478 5.3829L15.1934 0Z"
+          fill="var(--p-primary-color)" />
+      </svg>
+      <span class="font-semibold text-2xl text-primary">Your Logo</span>
+    </li>
+    <li>
+      <p-button (click)="onSidebarToggle()" icon="pi pi-bars"></p-button>
+    </li>
+  </ul>
+  <ul class="flex list-none m-0 p-0 gap-2 items-center">
+    <!-- Dark/Light Toggle Button -->
+    <li>
+      <app-theme-switch></app-theme-switch>
+    </li>
+  </ul>
+</div>
