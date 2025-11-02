@@ -6,10 +6,11 @@ import { loadRemoteModule } from '@angular-architects/native-federation';
 })
 export class MicroFrontendService {
   constructor() { }
-  async loadRemoteComponent(port: number, remoteName:string) {
+  async loadRemoteComponent(moduleName: string, port: number, remoteName:string) {
     try {
+      console.log(`Loading remote module ${remoteName} from port ${port}`);
       return await loadRemoteModule({
-        exposedModule: './Component',
+        exposedModule: moduleName,
         remoteName:remoteName,
         remoteEntry: `http://localhost:${port}/remoteEntry.js`,
         fallback:'unauthorized'
