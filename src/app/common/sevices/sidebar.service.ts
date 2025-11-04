@@ -3,7 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 @Injectable({ providedIn: 'root' })
 export class SidebarService {
-  private visibleSubject = new BehaviorSubject<boolean>(false);
+  private visibleSubject = new BehaviorSubject<boolean>(true);
   visible$ = this.visibleSubject.asObservable();
 
   toggle() {

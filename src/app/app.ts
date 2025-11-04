@@ -1,10 +1,11 @@
 import { Component, ComponentRef, OnDestroy, OnInit, signal, ViewChild, ViewContainerRef } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { PrimeNG } from 'primeng/config';
+import { ImportsModule } from './imports';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, ],
+  imports: [RouterOutlet,ImportsModule ],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
