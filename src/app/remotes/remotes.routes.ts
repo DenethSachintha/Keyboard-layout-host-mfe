@@ -1,10 +1,12 @@
 import { Routes } from '@angular/router';
 import { Remotes } from './remotes';
+import { loadRemoteModule } from '@angular-architects/native-federation';
+import { loadRemoteRoutesWithStyle } from '../common/sevices/load-remote-routes.service';
 
 export const RemotesRoutes: Routes = [
   {
     path: '',
-    redirectTo: 'generator',       
+    redirectTo: 'generator',
     pathMatch: 'full',
   },
   {
@@ -13,15 +15,30 @@ export const RemotesRoutes: Routes = [
     data: {
       title: 'Layout Generator Page',
       RemoteComponent: [
-        { 
-            Port: '4201', 
-            Name: 'Keyboard-layout-generator-mfe',
-            Module: './Component' 
+        {
+          Port: '4201',
+          Name: 'Keyboard-layout-generator-mfe',
+          Module: './Component',
         },
       ],
     },
   },
   {
+    path: 'guide',
+    loadChildren: () =>
+      loadRemoteRoutesWithStyle(4202, 'Keyboard-layout-guide-mfe', './Routes')
+        .then(m => m.routes),
+  },
+  /*{
+    path: 'guide',
+    loadChildren: () =>
+      loadRemoteModule({
+        remoteEntry: 'http://localhost:4202/remoteEntry.js',
+        remoteName: 'Keyboard-layout-guide-mfe',
+        exposedModule: './Routes',
+      }).then((m) => m.routes),
+  },*/
+  /*{
     path: 'guide',
     component: Remotes,
     data: {
@@ -34,5 +51,5 @@ export const RemotesRoutes: Routes = [
         },
       ],
     },
-  },
+  },*/
 ];
