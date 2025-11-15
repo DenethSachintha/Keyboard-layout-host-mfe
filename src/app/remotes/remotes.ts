@@ -1,6 +1,7 @@
 import { Component, ComponentRef, EnvironmentInjector, ViewChild, ViewContainerRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { MicroFrontendService } from '../common/sevices/micro-frontend.service';
+import { MicroFrontendService } from '../common/services/micro-frontend.service';
+import { StateService } from '../common/services/state.service';
 
 @Component({
   selector: 'app-remotes',
@@ -17,7 +18,8 @@ export class Remotes {
   constructor(
     private microFrontendService: MicroFrontendService,
     private route: ActivatedRoute,
-    private environmentInjector: EnvironmentInjector // ✅ needed for DI in remotes
+    private environmentInjector: EnvironmentInjector,
+    private state: StateService
   ) {}
 
   async ngOnInit() {
@@ -43,6 +45,13 @@ export class Remotes {
       });
 
       this.remoteRef.changeDetectorRef.detectChanges();
+
+       this.state.updateState({ fromHost: 'Hello remote!' });
+
+      // LISTEN TO REMOTE UPDATES
+      this.state.layoutState$.subscribe(data => {
+        console.log('Host received:', data);
+      });
     } catch (error) {
       console.error('Error loading remote component:', error);
     }

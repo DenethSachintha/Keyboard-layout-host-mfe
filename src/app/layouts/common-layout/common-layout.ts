@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { SideMenu } from '../side-menu/side-menu';
 import { ButtonModule } from 'primeng/button';
 import { Header } from '../header/header';
-import { SidebarService } from '../../common/sevices/sidebar.service';
+import { SidebarService } from '../../common/services/sidebar.service';
 
 @Component({
   selector: 'app-common-layout',

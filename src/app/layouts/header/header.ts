@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ButtonModule } from 'primeng/button';
 import { ThemeSwitch } from '../theme-switch/theme-switch';
-import { SidebarService } from '../../common/sevices/sidebar.service';
+import { SidebarService } from '../../common/services/sidebar.service';
 import { ImportsModule } from '../../imports';
 
 @Component({

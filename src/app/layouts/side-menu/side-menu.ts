@@ -5,7 +5,7 @@ import { ButtonModule } from 'primeng/button';
 import { Ripple } from 'primeng/ripple';
 import { AvatarModule } from 'primeng/avatar';
 import { StyleClass } from 'primeng/styleclass';
-import { SidebarService } from '../../common/sevices/sidebar.service';
+import { SidebarService } from '../../common/services/sidebar.service';
 import { Subscription } from 'rxjs';
 
 @Component({

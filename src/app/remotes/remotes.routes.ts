@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Remotes } from './remotes';
 import { loadRemoteModule } from '@angular-architects/native-federation';
-import { loadRemoteRoutesWithStyle } from '../common/sevices/load-remote-routes.service';
+import { loadRemoteRoutesWithStyle } from '../common/services/load-remote-routes.service';
 
 export const RemotesRoutes: Routes = [
   {
