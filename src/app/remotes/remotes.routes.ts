@@ -9,7 +9,7 @@ export const RemotesRoutes: Routes = [
     redirectTo: 'generator',
     pathMatch: 'full',
   },
-  {
+  /* {
     path: 'generator',
     component: Remotes,
     data: {
@@ -22,9 +22,15 @@ export const RemotesRoutes: Routes = [
         },
       ],
     },
+  }, */
+  {
+    path: 'workflow',
+    loadChildren: () =>
+      loadRemoteRoutesWithStyle(4201, 'Keyboard-layout-generator-mfe', './Routes')
+        .then(m => m.routes),
   },
   {
-    path: 'guide',
+    path: 'training',
     loadChildren: () =>
       loadRemoteRoutesWithStyle(4202, 'Keyboard-layout-guide-mfe', './Routes')
         .then(m => m.routes),

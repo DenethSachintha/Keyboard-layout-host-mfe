@@ -1,179 +1,85 @@
 <nav class="sidebar" [class.open]="visible">
-    <div class="sidebar-inner flex flex-col h-full">
-        <!-- HEADER -->
-        
+    <div class="sidebar-inner flex flex-col h-full justify-between">
 
-        <!-- BODY -->
         <div class="flex flex-col h-full">
-            <!-- Scrollable content -->
             <div class="overflow-y-auto flex-1">
-                <!-- FAVORITES -->
+
+                <!-- WORKFLOW -->
                 <ul class="list-none p-4 m-0">
                     <li>
-                        <!-- Main toggle -->
                         <div pRipple pStyleClass="@next" enterFromClass="hidden" enterActiveClass="animate-slidedown"
-                            leaveToClass="hidden" leaveActiveClass="animate-slideup"
-                            class="flex items-center justify-between cursor-pointer p-4 text-surface-600 dark:text-surface-200 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all rounded-lg">
-                            <span class="font-semibold tracking-wide">FAVORITES</span>
-                            <i class="pi pi-chevron-down text-sm leading-none"></i>
+                            leaveToClass="hidden" leaveActiveClass="animate-slideup" class="flex items-center justify-between cursor-pointer p-4 
+                                   text-surface-600 dark:text-surface-200 hover:bg-surface-100 
+                                   dark:hover:bg-surface-700 transition-all rounded-lg">
+                            <span class="font-semibold tracking-wide">GENERATE WORKFLOW</span>
+                            <i class="pi pi-chevron-down text-sm"></i>
                         </div>
 
-                        <!-- Dropdown body -->
-                        <ul class="list-none m-0 p-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <!-- Item -->
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-home text-base leading-none"></i>
-                                    <span class="font-medium">Dashboard</span>
-                                </a>
-                            </li>
+                        <ul class="list-none p-0 m-0 overflow-hidden transition-all duration-300">
 
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-bookmark text-base leading-none"></i>
-                                    <span class="font-medium">Bookmarks</span>
-                                </a>
-                            </li>
+                            <ng-container *ngFor="let item of Workflow">
+                                <ng-container *ngTemplateOutlet="menuItem; 
+                                        context:{ $implicit: item }"></ng-container>
+                            </ng-container>
 
-                            <!-- Nested Dropdown -->
-                            <li>
-                                <a pRipple pStyleClass="@next" enterFromClass="hidden"
-                                    enterActiveClass="animate-slidedown" leaveToClass="hidden"
-                                    leaveActiveClass="animate-slideup"
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-chart-line text-base leading-none"></i>
-                                    <span class="font-medium">Reports</span>
-                                    <i class="pi pi-chevron-down ml-auto text-sm leading-none"></i>
-                                </a>
-
-                                <!-- Nested body -->
-                                <ul
-                                    class="list-none m-0 p-0 pl-4 hidden overflow-hidden transition-all duration-300 ease-in-out">
-                                    <li>
-                                        <a pRipple pStyleClass="@next" enterFromClass="hidden"
-                                            enterActiveClass="animate-slidedown" leaveToClass="hidden"
-                                            leaveActiveClass="animate-slideup"
-                                            class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                            <i class="pi pi-chart-line text-base leading-none"></i>
-                                            <span class="font-medium">Revenue</span>
-                                            <i class="pi pi-chevron-down ml-auto text-sm leading-none"></i>
-                                        </a>
-
-                                        <ul
-                                            class="list-none m-0 p-0 pl-4 hidden overflow-hidden transition-all duration-300 ease-in-out">
-                                            <li>
-                                                <a pRipple
-                                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                                    <i class="pi pi-table text-base leading-none"></i>
-                                                    <span class="font-medium">View</span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a pRipple
-                                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                                    <i class="pi pi-search text-base leading-none"></i>
-                                                    <span class="font-medium">Search</span>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a pRipple
-                                            class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                            <i class="pi pi-chart-line text-base leading-none"></i>
-                                            <span class="font-medium">Expenses</span>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </li>
-
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-users text-base leading-none"></i>
-                                    <span class="font-medium">Team</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-comments text-base leading-none"></i>
-                                    <span class="font-medium">Messages</span>
-                                    <span
-                                        class="ml-auto inline-flex items-center justify-center bg-primary text-primary-contrast rounded-full text-xs font-semibold"
-                                        style="min-width: 1.5rem; height: 1.5rem">3</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-calendar text-base leading-none"></i>
-                                    <span class="font-medium">Calendar</span>
-                                </a>
-                            </li>
-
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-cog text-base leading-none"></i>
-                                    <span class="font-medium">Settings</span>
-                                </a>
-                            </li>
                         </ul>
                     </li>
                 </ul>
 
-                <!-- APPLICATION -->
+                <!-- TRAINING -->
                 <ul class="list-none p-4 m-0">
                     <li>
                         <div pRipple pStyleClass="@next" enterFromClass="hidden" enterActiveClass="animate-slidedown"
-                            leaveToClass="hidden" leaveActiveClass="animate-slideup"
-                            class="flex items-center justify-between cursor-pointer p-4 text-surface-600 dark:text-surface-200 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all rounded-lg">
-                            <span class="font-semibold tracking-wide">APPLICATION</span>
-                            <i class="pi pi-chevron-down text-sm leading-none"></i>
+                            leaveToClass="hidden" leaveActiveClass="animate-slideup" class="flex items-center justify-between cursor-pointer p-4 
+                                   text-surface-600 dark:text-surface-200 hover:bg-surface-100 
+                                   dark:hover:bg-surface-700 transition-all rounded-lg">
+                            <span class="font-semibold tracking-wide">TRAINING GUIDANCE</span>
+                            <i class="pi pi-chevron-down text-sm"></i>
                         </div>
-                        <ul class="list-none p-0 m-0 overflow-hidden transition-all duration-300 ease-in-out">
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-folder text-base leading-none"></i>
-                                    <span class="font-medium">Projects</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-chart-bar text-base leading-none"></i>
-                                    <span class="font-medium">Performance</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a pRipple
-                                    class="flex items-center gap-2 cursor-pointer p-4 rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 transition-all">
-                                    <i class="pi pi-cog text-base leading-none"></i>
-                                    <span class="font-medium">Settings</span>
-                                </a>
-                            </li>
+
+                        <ul class="list-none p-0 m-0 overflow-hidden transition-all duration-300">
+
+                            <ng-container *ngFor="let item of Training">
+                                <ng-container *ngTemplateOutlet="menuItem; 
+                                        context:{ $implicit: item }"></ng-container>
+                            </ng-container>
+
                         </ul>
                     </li>
                 </ul>
-            </div>
 
-            <!-- Footer -->
-            <div class="mt-auto border-t border-surface px-4 py-3">
-                <a pRipple
-                    class="flex items-center gap-2 cursor-pointer rounded-lg text-surface-700 dark:text-surface-100 hover:bg-surface-100 dark:hover:bg-surface-700 p-4 transition-all">
-                    <p-avatar image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-                        shape="circle"></p-avatar>
-                    <span class="font-bold">Amy Elsner</span>
-                </a>
             </div>
         </div>
-
+        <!-- FOOTER -->
+        <div class="mt-auto border-t border-surface px-4 py-3">
+            <a pRipple class="flex items-center gap-2 cursor-pointer rounded-lg 
+                           text-surface-700 dark:text-surface-100 hover:bg-surface-100 
+                           dark:hover:bg-surface-700 p-4 transition-all">
+                <p-avatar [image]="footer.avatar" shape="circle"></p-avatar>
+                <span class="font-bold">{{ footer.name }}</span>
+            </a>
+        </div>
     </div>
 </nav>
+
+<!-- 🔁 Recursive menu item template -->
+<ng-template #menuItem let-item>
+    <li>
+        <a pRipple [routerLink]="item.url" [pStyleClass]="item.children ? '@next' : undefined" enterFromClass="hidden"
+            enterActiveClass="animate-slidedown" leaveToClass="hidden" leaveActiveClass="animate-slideup" class="flex items-center gap-2 cursor-pointer p-4 rounded-lg 
+                   text-surface-700 dark:text-surface-100 hover:bg-surface-100 
+                   dark:hover:bg-surface-700 transition-all">
+            <i [class]="item.icon + ' text-base leading-none'"></i>
+            <span class="font-medium">{{ item.label }}</span>
+
+            <i *ngIf="item.children" class="pi pi-chevron-down ml-auto text-sm"></i>
+        </a>
+
+        <ul *ngIf="item.children"
+            class="list-none m-0 p-0 pl-4 overflow-hidden transition-all duration-300 ease-in-out">
+            <ng-container *ngFor="let child of item.children">
+                <ng-container *ngTemplateOutlet="menuItem; context:{ $implicit: child }"></ng-container>
+            </ng-container>
+        </ul>
+    </li>
+</ng-template>

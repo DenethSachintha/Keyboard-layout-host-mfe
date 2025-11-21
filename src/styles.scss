@@ -11,6 +11,7 @@
   --border-color: var(--p-surface-200);
   --text-color: var(--p-surface-700);
   --overlay-background: #ffffff;
+  --p-surface-700: var(--p-surface-700) !important;
 }
 
 :root[class='p-dark'] {
@@ -21,6 +22,7 @@
   --border-color: rgba(255, 255, 255, 0.1);
   --text-color: var(--p-surface-0);
   --overlay-background: var(--p-surface-900);
+  --p-surface-700: var(--p-surface-700) !important;
 }
 
 html {
@@ -51,4 +53,4 @@ body {
     width: 100%;
 }
         
-    
+

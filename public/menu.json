@@ -1,0 +1,73 @@
+{
+  "Workflow": [
+    {
+      "label": "Typing Style",
+      "icon": "pi pi-home",
+      "url": "/dashboard/workflow"
+    },
+    {
+      "label": "Predict",
+      "icon": "pi pi-search",
+      "url": "/dashboard/workflow"
+    },
+    {
+      "label": "Customize",
+      "icon": "pi pi-cog",
+      "url": "/dashboard/workflow"
+    },
+    {
+      "label": "Generate",
+      "icon": "pi pi-bookmark",
+      "url": "/dashboard/workflow"
+    }
+  ],
+  "Training": [
+    {
+      "label": "Typing Basics",
+      "icon": "pi pi-folder",
+      "url": "/dashboard/training/tutorials",
+      "children": [
+        {
+          "label": "Modules",
+          "icon": "pi pi-table",
+          "url": "/dashboard/training/modules/1"
+        }
+      ]
+    },
+    {
+      "label": "Speed & Precision",
+      "icon": "pi pi-folder",
+      "url": "/dashboard/training/tutorials",
+      "children": [
+        {
+          "label": "Modules",
+          "icon": "pi pi-table",
+          "url": "/dashboard/training/modules/2"
+        }
+      ]
+    },
+    {
+      "label": "Master Typist",
+      "icon": "pi pi-folder",
+      "url": "/dashboard/training/tutorials",
+      "children": [
+        {
+          "label": "Modules",
+          "icon": "pi pi-table",
+          "url": "/dashboard/training/modules/3",
+          "children": [
+            {
+              "label": "Sessions",
+              "icon": "pi pi-chart-bar",
+              "url": "/dashboard/training/tutorials"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "footer": {
+    "name": "Amy Elsner",
+    "avatar": "https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
+  }
+}
